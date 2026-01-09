@@ -21,7 +21,7 @@ jobs:
 
       - name: Build and push Docker images
         run: |
-          for dockerfile in dockerfiles/*; do
+          for dockerfile in /Dockerfile; do
             image_name=$(basename $dockerfile)
             docker build -f $dockerfile -t ghcr.io/arthur2500/${image_name}:latest .
             docker push ghcr.io/arthur2500/${image_name}:latest

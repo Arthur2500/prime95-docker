@@ -1,0 +1,8 @@
+services:
+  prime95:
+    # build: .
+    image: ghcr.io/arthur2500/prime95:latest
+    container_name: prime95
+    restart: unless-stopped
+    environment:
+      PRIME95_FLAGS: "-d"

@@ -5,4 +5,7 @@ services:
     container_name: prime95
     restart: unless-stopped
     environment:
-      PRIME95_FLAGS: "-d"
+      PRIME95_FLAGS: "-d -t"
+    # volumes:
+    # - ./prime95/prime.txt:/opt/prime95/prime.txt
+    # - ./prime95/results.txt:/opt/prime95/results.txt

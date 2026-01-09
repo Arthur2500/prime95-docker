@@ -6,11 +6,11 @@ Containerisiert Prime95. Beim Build wird automatisch der zweitneueste Major-Ordn
 - Build & Start: `docker compose up -d`
 - Direkt mit `docker run`:
   ```bash
-  docker run --name prime95 --restart unless-stopped -e PRIME95_FLAGS="-d" -it ghcr.io/arthur2500/prime95:latest
+  docker run --name prime95 --restart no -e PRIME95_FLAGS="-d" -it ghcr.io/arthur2500/prime95:latest
   ```
   Mit Volumes:
   ```bash
-  docker run --name prime95 --restart unless-stopped -e PRIME95_FLAGS="-d -t" -it -v ./prime95/prime.txt:/opt/prime95/prime.txt -v ./prime95/results.txt:/opt/prime95/results.txt ghcr.io/arthur2500/prime95:latest
+  docker run --name prime95 --restart no -e PRIME95_FLAGS="-d -t" -it -v ./prime95/prime.txt:/opt/prime95/prime.txt -v ./prime95/results.txt:/opt/prime95/results.txt ghcr.io/arthur2500/prime95:latest
   ```
 - Flags anpassen: `PRIME95_FLAGS` (Standard `-d -t`) in [docker-compose.yml](docker-compose.yml) setzen oder via `docker run -e PRIME95_FLAGS="-t" ...` übergeben.
 - Einstiegspunkt: [entrypoint.sh](entrypoint.sh) ruft `./mprime` im entpackten Verzeichnis auf.
